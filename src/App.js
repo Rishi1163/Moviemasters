@@ -1,21 +1,33 @@
 
 import './App.css';
 import Home from './pages/Home';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar'
 import MovieDescription from './pages/MovieDescription';
+import Signup from "./Components/Signup"
+import SignIn from "./Components/Signin"
+import Movies from './pages/Movies';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import Intro from './pages/Intro';
 
-
+const queryClient = new QueryClient();
 function App() {
   return (
     <>
-      <Navbar />
-      <Routes>
-          <Route path="/" >
-              <Route index element={<Home />} />
+    <QueryClientProvider client={queryClient}>
+    <Routes>
+            <Route  path="/" element={<Navigate to={"/intro"}/>}/>
+            <Route path="/intro" element={<Intro/>}/>
+              <Route path='/register' element={<Signup/>}/>
+              <Route path="/login" element={<SignIn/>}/>
+              <Route path="/home" element={<Home />} />
               <Route path="movies/:id" element={<MovieDescription />} />
-          </Route>
+              <Route path="Movies" element={<Movies/>}/>
+          
       </Routes>
+    </QueryClientProvider>
+      {/* <Navbar /> */}
+      
     </>
   );
 }

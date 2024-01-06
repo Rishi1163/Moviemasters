@@ -8,7 +8,7 @@ const ENDPOINT_TO_TITLE = {
 
 export async function getMovies(){
     try {
-        const endpoints = ['/movie/popular', '/movie/upcoming', '/movie/top_rated']
+        const endpoints  = ['/movie/popular', '/movie/upcoming', '/movie/top_rated']
         let res = []
     
         for(const endpoint of endpoints){
@@ -33,5 +33,17 @@ export async function getMovieById(id) {
             append_to_response: 'videos,recommendations,credits'
         }
     })
+    return response.data
+}
+
+export async function getMoviesByGenre(genre, pageParam = 1) {
+
+    const response = await axiosInstance.get('/discover/movie', {
+        params: {
+            pageParam,
+            with_genres: genre
+        }
+    })
+
     return response.data
 }

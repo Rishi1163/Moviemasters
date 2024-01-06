@@ -4,6 +4,7 @@ import { getMovies } from '../api/Movies';
 import Background from '../Components/Background';
 import SlidingWindow from '../Components/SlidingWindow';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../Components/Navbar';
 
 const IMG_URL = 'http://image.tmdb.org/t/p/original'
 
@@ -34,6 +35,7 @@ const Home = () => {
 
     return (
         <div>
+            <Navbar/>
             <section className='section-main'>
                 <Background img={movieBackdrop} className={'justify-end section-main'}>
                     <div className="bottom-2 left-0 p-3 z-10 sm:p-5 md:p-7 lg:p-12 mb-5">
