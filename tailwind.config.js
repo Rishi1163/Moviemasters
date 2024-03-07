@@ -20,12 +20,19 @@ module.exports = {
 
       '2xl': '1536px',
     },
+    
     extend: {
       transitionProperty:{
         width:'width'
       },
       colors: {
         templateBlue: '#061629'
+      },
+      spacing: {
+        '128': '32rem',
+      },
+      width: {
+        '128': '32rem',
       }
     },
   },

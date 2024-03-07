@@ -12,9 +12,10 @@ const MovieDetail = () => {
         overview,
         runtime,
         crew,
+        id
     } = useMovie()
 
-    console.log(title, overview, runtime, crew)
+    console.log(title, overview, runtime, crew, id)
 
     const poster = `${IMG_URL}${poster_path}`;
     const backdrop = `${IMG_URL}${backdrop_path}`;
@@ -63,6 +64,7 @@ const MovieDetail = () => {
                     </div>
                 </div>
             </div>
+            
         </>
     )
 }

@@ -20,6 +20,7 @@ const RegistrationForm = () => {
     .then(result => {console.log(result)
     navigate('/login')})
     .catch(err => console.log(err))
+    localStorage.setItem("user", JSON.stringify({username, email, password}))
   };
 
   return (

@@ -19,18 +19,20 @@ const RegistrationForm = () => {
     axios.post("http://localhost:3001/login ", {email, password})
     .then(result => {
       console.log(result)
-      if(result.data !== "Success"){
+      if(result.data.message !== "Success"){
         alert("No record exist")
       }
-      else if (result.data === "Success"){
+      else if (result.data.message === "Success"){
         navigate("/home")
+        localStorage.setItem("user", JSON.stringify(result.data.user))
+        localStorage.setItem("token", JSON.stringify(result.data.auth))
       }
       else{
         alert("Please fill in details")
       }
     })
     
-    .catch(err => console.log(err))
+    .catch(err => alert("Invalid Credentials"))
   };
 
   return (
