@@ -10,7 +10,7 @@ export default function Background({ img, children, className }) {
                 backgroundSize: 'cover',
                 backgroundBlendMode: 'darken',
                 boxShadow: '0px -50px 100px #0F1016 inset',
-                backgroundPositionX: 'center',
+                // backgroundPositionX: 'center',
             }}>
                 {children}
             </div>

@@ -129,7 +129,7 @@ const Movies = () => {
         return (
             <>
             <Navbar/>
-                <div className="mt-3 sm:mt-24 px-3 lg:max-w-[95%] mx-auto">
+                <div className="mt-0  px-3 lg:max-w-[95%] mx-auto">
                     <div className="p-2 sm:p-5">
                         <header className='flex p-5 text-4xl text-white justify-between my-5'>
                             <p>{getTitle()}</p>
@@ -138,7 +138,7 @@ const Movies = () => {
 
                         <div>
                             <MovieGrid movies={getMovies()} />
-                            <button className='bg-green-600 text-white my-5' onClick={fetchNextPage}>Load more</button>
+                            {/* <button className='bg-green-600 text-white my-5' onClick={fetchNextPage}>Load more</button> */}
                         </div>
                     </div>
                 </div>

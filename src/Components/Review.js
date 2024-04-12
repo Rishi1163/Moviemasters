@@ -1,6 +1,7 @@
 import React, { useEffect , useState} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
+import Staremoji from './Staremoji';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faStar } from '@fortawesome/free-solid-svg-icons';
 
@@ -42,6 +43,7 @@ export default function Review({movieId}) {
     </div>
     </div> */}
 
+{reviews.length > 0 ? (
     <section className="pb-10">
                 
                 {
@@ -65,9 +67,12 @@ export default function Review({movieId}) {
 
                             <div className="review-content">
                             {/* <FontAwesomeIcon icon={faStar} style={{color: "#FFD43B",}} /> */}
-                                <p className="text-lg mb-1">{review.rating}</p>
+                                
                                 <p className="text-lg mb-1">{review.title}</p>
-                                <p className="text-sm text-gray-400">{review.content}</p>
+                                <span className="text-lg mb-1">{review.rating}<Staremoji/></span> 
+                                <p style={{ fontSize: review.content.length > 100 ? '1rem' : '0.8rem' }} className="text-gray-400 text-sm">
+  {review.content}
+</p>
                             </div>
                         </div>
                     })
@@ -79,6 +84,12 @@ export default function Review({movieId}) {
                 }
 
             </section>
+
+) : (
+  <p className="text-white text-xl py-3 sm:py-5 text-center">
+                No reviews available
+            </p>
+)}
         
     
     {/* if (isLoading) {
@@ -87,14 +98,14 @@ export default function Review({movieId}) {
                 <i class="fa-solid fa-circle-notch animate-spin text-red-600 sm:text-4xl text-3xl my-5"></i>
             </div>
     
-    }
-    if(isError){
+    } */}
+    {/* if(error){
     
             <p className="text-white text-xl py-3 sm:py-5 text-center">
                 No reviews available
             </p>
     
-    } */}
+    }  */}
 
     </>
   )

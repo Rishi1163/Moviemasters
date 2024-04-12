@@ -27,7 +27,7 @@ const MovieDetail = () => {
     return (
         <>
             <Background img={backdrop}></Background>
-            <div className="md:flex justify-start mt-20 md:mt-24 h-fit px-2 md:px-0 lg:mt-32">
+            <div className="md:flex justify-start mt-5 md:mt-24 h-fit px-2 md:px-0 lg:mt-10">
                 <img
                     src={`${poster}`}
                     alt="poster"

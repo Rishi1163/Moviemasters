@@ -10,6 +10,9 @@ import Movies from './pages/Movies';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import Intro from './pages/Intro';
 import PrivateComp from './Components/PrivateComp';
+import ReactDOM from 'react-dom/client';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const queryClient = new QueryClient();
 function App() {

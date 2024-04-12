@@ -27,7 +27,7 @@ const MovieDescription = () => {
                 </div>
                
             </MovieContext>
-            <h1 className="text-2xl font-bold mb-4">Movie Title</h1>
+            
         </>
     );
 };
