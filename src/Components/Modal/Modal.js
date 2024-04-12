@@ -34,7 +34,7 @@ export default function Modal() {
 
     console.log("Review Data:");
     axios
-      .post("http://localhost:3001/reviews", {
+      .post("https://moviemastersbackend.onrender.com/reviews", {
         author,
         title,
         content,

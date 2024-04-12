@@ -13,7 +13,7 @@ export default function Review({movieId}) {
     useEffect(() => {
         const fetchReviews = async () => {
           try {
-            const response = await axios.get(`http://localhost:3001/getreviews/${movieId}`);
+            const response = await axios.get(`https://moviemastersbackend.onrender.com/getreviews/${movieId}`);
             setReviews(response.data);
             setLoading(false);
           } catch (error) {

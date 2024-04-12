@@ -30,7 +30,7 @@ const RegistrationForm = () => {
 
     // Handle registration logic here
     console.log('Registration data:');
-    axios.post("http://localhost:3001/register", { username, email, password })
+    axios.post("https://moviemastersbackend.onrender.com/register", { username, email, password })
       .then(result => {
         console.log(result);
         navigate('/login');

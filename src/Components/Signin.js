@@ -16,7 +16,7 @@ const RegistrationForm = () => {
     e.preventDefault();
     // Handle registration logic here
     
-    axios.post("http://localhost:3001/login ", {email, password})
+    axios.post("https://moviemastersbackend.onrender.com/login ", {email, password})
     .then(result => {
       console.log(result)
       if(result.data.message !== "Success"){
